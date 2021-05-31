@@ -97,3 +97,5 @@ LOCAL_KERNEL := device/xiaomi/beryllium/kernel
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
+
+$(call inherit-product, vendor/xiaomi/sdm845-common/sdm845-common-vendor.mk)
