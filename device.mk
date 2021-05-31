@@ -92,3 +92,8 @@ $(call inherit-product, device/xiaomi/sdm845-platform/platform.mk)
 
 # include board vendor blobs
 $(call inherit-product-if-exists, vendor/sony/tama-common/tama-partial.mk)
+
+LOCAL_KERNEL := device/xiaomi/beryllium/kernel
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
