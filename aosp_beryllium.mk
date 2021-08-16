@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+TARGET_KERNEL_CONFIG := aosp_beryllium_defconfig
+
 # DualSim
 PRODUCT_DEVICE_DS := true
 
@@ -20,10 +22,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.block_allow_data=0
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/sony/akari/aosp_h8216.mk)
+$(call inherit-product, device/sony/akari/device.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-PRODUCT_NAME := aosp_h8266
-PRODUCT_DEVICE := akari
-PRODUCT_MODEL := Xperia XZ2 Dual (AOSP)
-PRODUCT_BRAND := Sony
-PRODUCT_MANUFACTURER := Sony
+PRODUCT_NAME := aosp_beryllium
+PRODUCT_DEVICE := beryllium
+PRODUCT_MODEL := Poco F1 (AOSP)
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MANUFACTURER := Xiaomi

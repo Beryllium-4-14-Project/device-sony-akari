@@ -13,10 +13,10 @@
 # limitations under the License.
 
 # Device path
-DEVICE_PATH := device/sony/akari/rootdir
+DEVICE_PATH := device/xiaomi/beryllium/rootdir
 
 DEVICE_PACKAGE_OVERLAYS += \
-    device/sony/akari/overlay
+    device/xiaomi/beryllium/overlay
 
 # Device Specific Permissions
 PRODUCT_COPY_FILES := \
@@ -65,9 +65,10 @@ PRODUCT_COPY_FILES += \
 
 # Device Init
 PRODUCT_PACKAGES += \
-    fstab.akari \
-    init.recovery.akari \
-    init.akari
+    fstab.beryllium \
+    init.recovery.qcom \
+    init.qcom \
+    init.beryllium
 
 # Telephony Packages (AOSP)
 PRODUCT_PACKAGES += \
@@ -87,10 +88,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.usb.pid_suffix=1FA
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/sony/tama/platform.mk)
-
-# copy NFC firmware
-$(call inherit-product-if-exists, vendor/nxp/nxp-vendor.mk)
+$(call inherit-product, device/xiaomi/sdm845-platform/platform.mk)
 
 # include board vendor blobs
 $(call inherit-product-if-exists, vendor/sony/tama-common/tama-partial.mk)

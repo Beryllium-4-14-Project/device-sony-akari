@@ -12,12 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_h8216.mk \
-                     $(LOCAL_DIR)/aosp_h8266.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_beryllium.mk
 
 COMMON_LUNCH_CHOICES += \
-    aosp_h8216-eng \
-    aosp_h8216-userdebug \
-    aosp_h8266-eng \
-    aosp_h8266-userdebug
+    aosp_beryllium-eng \
+    aosp_beryllium-userdebug 
 
